@@ -4,6 +4,7 @@
 #include "NormalAccount.h"
 #include "HighCreditAccount.h"
 #include "BankingCommonDec1.h"
+#include "String.h"
 
 AccountHandler::AccountHandler() :Accnum(0) {}
 AccountHandler::~AccountHandler()
@@ -25,7 +26,8 @@ void AccountHandler::ChoiceFunc(int choice) {
 }
 void AccountHandler::CreateAccount() {
 	int AccountID;
-	char name[20];
+	//char name[20];
+	String name;
 	int balance;
 	bool cycle = false;
 	int select = 0;
@@ -143,7 +145,7 @@ void AccountHandler::WithdrawMoney() {
 		cout << "출금할 금액 :";
 		cin >> balance;
 		if (accArr[i]->Withdraw(balance))
-			cout << "출금완료" << endl;
+			cout << "출금완료" << endl<<endl;
 		else
 			cout << "출금실패: 출금금액 부족" << endl;
 	}
